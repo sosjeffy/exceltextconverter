@@ -82,7 +82,7 @@ def _fix_name(data: tuple, formatted_name: str, desired_first_col: str) -> tuple
     return tuple(data)
 
 
-def main():
+def run():
     df = _return_df(_collect_excel_name(), _collect_sheet_name())  # For use in build_zip
     filename = _collect_filename()
     col = _collect_desired_first_col()
@@ -93,10 +93,10 @@ def main():
         # Writes each line to file
         _write_file(filename, ' 	'.join([dat_element for dat_element in data]) + '\n')
 
+
+if __name__ == "__main__":
+    run()
     print('--------------Operation completed.--------------')
-
-
-main()
 
 
 
